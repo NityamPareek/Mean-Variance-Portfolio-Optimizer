@@ -32,7 +32,7 @@ print("\n\nLoading data...\n\n")
 
 df, symbols,number_of_symbols = get_data()
 print("\n\nUsing monte carlo simulations to compute optimal portfolio...\n\n")
-results = monte_carlo_sim(df_clean, number_of_symbols)
+results = monte_carlo_sim(df, number_of_symbols)
 
 
 # In[4]:
