@@ -6,12 +6,11 @@
 
 import pandas as pd
 import numpy as np
-from nsepy import get_history
+import yfinance as yf
 from datetime import date
 from dateutil.relativedelta import relativedelta
 
 from get_data import get_data
-from preprocessing import clean_df
 from monte_carlo import monte_carlo_sim
 
 pd.set_option('display.max_colwidth', None)
@@ -26,13 +25,13 @@ print("Mean-Variance Portfolio Optimizer")
 print("="*80)
 print("\nNSE Code of Stocks in your portfolio must be entered in the file named 'stocks.txt'")
 print("Number of years of historical data considered is 3")
-
+print("\n\nLoading data...\n\n")
 
 # In[3]:
 
 
 df, symbols,number_of_symbols = get_data()
-df_clean = clean_df(df)
+print("\n\nUsing monte carlo simulations to compute optimal portfolio...\n\n")
 results = monte_carlo_sim(df_clean, number_of_symbols)
 
 
